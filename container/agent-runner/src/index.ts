@@ -470,6 +470,7 @@ async function runQuery(
         'NotebookEdit',
         'mcp__nanoclaw__*',
         'mcp__nitan__*',
+        'mcp__gmail__*',
       ],
       env: sdkEnv,
       model: 'claude-sonnet-4-6',
@@ -489,6 +490,10 @@ async function runQuery(
         nitan: {
           command: 'nitan-mcp',
           args: [],
+        },
+        gmail: {
+          command: 'npx',
+          args: ['-y', '@gongrzhe/server-gmail-autoauth-mcp'],
         },
       },
       hooks: {
