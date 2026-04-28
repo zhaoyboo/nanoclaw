@@ -469,8 +469,10 @@ async function runQuery(
         'Skill',
         'NotebookEdit',
         'mcp__nanoclaw__*',
+        'mcp__nitan__*',
       ],
       env: sdkEnv,
+      model: 'claude-sonnet-4-6',
       permissionMode: 'bypassPermissions',
       allowDangerouslySkipPermissions: true,
       settingSources: ['project', 'user'],
@@ -483,6 +485,10 @@ async function runQuery(
             NANOCLAW_GROUP_FOLDER: containerInput.groupFolder,
             NANOCLAW_IS_MAIN: containerInput.isMain ? '1' : '0',
           },
+        },
+        nitan: {
+          command: 'nitan-mcp',
+          args: [],
         },
       },
       hooks: {
