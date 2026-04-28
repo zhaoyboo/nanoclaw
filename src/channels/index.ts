@@ -4,7 +4,7 @@
 // discord
 
 // gmail
-import './gmail.js';
+// (tool-only mode: MCP runs inside agent container, no host channel polling)
 
 // slack
 
