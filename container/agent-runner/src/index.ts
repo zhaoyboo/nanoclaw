@@ -472,6 +472,7 @@ async function runQuery(
         'mcp__nitan__*',
         'mcp__gmail__*',
         'mcp__google_calendar__*',
+        'mcp__github__*',
       ],
       env: sdkEnv,
       model: 'claude-sonnet-4-6',
@@ -502,6 +503,13 @@ async function runQuery(
           env: {
             GOOGLE_OAUTH_CREDENTIALS:
               '/home/node/.config/google-calendar-mcp/gcp-oauth.keys.json',
+          },
+        },
+        github: {
+          command: 'github-mcp-server',
+          args: ['stdio'],
+          env: {
+            GITHUB_PERSONAL_ACCESS_TOKEN: 'onecli-managed',
           },
         },
       },

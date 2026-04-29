@@ -39,6 +39,11 @@ ENV PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium
 # Install agent-browser, claude-code, nitan-mcp, gmail MCP, and Google Calendar MCP globally
 RUN npm install -g agent-browser @anthropic-ai/claude-code @nitansde/mcp@latest @gongrzhe/server-gmail-autoauth-mcp @cocal/google-calendar-mcp
 
+# Install GitHub MCP server (official Go binary)
+RUN curl -sSL https://github.com/github/github-mcp-server/releases/download/v1.0.3/github-mcp-server_Linux_x86_64.tar.gz \
+    | tar -xz -C /usr/local/bin github-mcp-server \
+    && chmod +x /usr/local/bin/github-mcp-server
+
 # Create app directory
 WORKDIR /app
 
