@@ -36,8 +36,8 @@ RUN python3 -m pip install --break-system-packages cloudscraper brotli
 ENV AGENT_BROWSER_EXECUTABLE_PATH=/usr/bin/chromium
 ENV PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium
 
-# Install agent-browser, claude-code, and nitan-mcp globally
-RUN npm install -g agent-browser @anthropic-ai/claude-code @nitansde/mcp@latest
+# Install agent-browser, claude-code, nitan-mcp, gmail MCP, and Google Calendar MCP globally
+RUN npm install -g agent-browser @anthropic-ai/claude-code @nitansde/mcp@latest @gongrzhe/server-gmail-autoauth-mcp @cocal/google-calendar-mcp
 
 # Create app directory
 WORKDIR /app

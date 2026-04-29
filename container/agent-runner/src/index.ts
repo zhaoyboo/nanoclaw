@@ -471,6 +471,7 @@ async function runQuery(
         'mcp__nanoclaw__*',
         'mcp__nitan__*',
         'mcp__gmail__*',
+        'mcp__google_calendar__*',
       ],
       env: sdkEnv,
       model: 'claude-sonnet-4-6',
@@ -494,6 +495,14 @@ async function runQuery(
         gmail: {
           command: 'npx',
           args: ['-y', '@gongrzhe/server-gmail-autoauth-mcp'],
+        },
+        google_calendar: {
+          command: 'npx',
+          args: ['-y', '@cocal/google-calendar-mcp'],
+          env: {
+            GOOGLE_OAUTH_CREDENTIALS:
+              '/home/node/.config/google-calendar-mcp/gcp-oauth.keys.json',
+          },
         },
       },
       hooks: {
