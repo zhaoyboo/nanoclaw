@@ -475,7 +475,7 @@ async function runQuery(
         'mcp__github__*',
       ],
       env: sdkEnv,
-      model: 'claude-sonnet-4-6',
+      model: 'claude-opus-4-6',
       permissionMode: 'bypassPermissions',
       allowDangerouslySkipPermissions: true,
       settingSources: ['project', 'user'],
